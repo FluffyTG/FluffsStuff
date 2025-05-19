@@ -1,12 +1,12 @@
 package fluff.fluffsstuff.block;
 
 import fluff.fluffsstuff.FluffsStuff;
-import fluff.fluffsstuff.block.custom.*;
 import fluff.fluffsstuff.block.custom.ModCrops.*;
-import fluff.fluffsstuff.block.custom.ModSaplings.ModEndSapling;
-import fluff.fluffsstuff.block.custom.ModSpecialBlocks.DenseOreBlock;
+import fluff.fluffsstuff.block.custom.ModSaplings.ModNetherSapling;
 import fluff.fluffsstuff.block.custom.ModSpecialBlocks.DenseOres.DenseDeepslateDiamond;
 import fluff.fluffsstuff.block.custom.ModSpecialBlocks.DenseOres.DenseStoneDiamond;
+import fluff.fluffsstuff.block.custom.TrellisBlock;
+import fluff.fluffsstuff.world.ModConfiguredFeatures;
 import fluff.fluffsstuff.world.tree.CharredSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -19,9 +19,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
-
-import static net.minecraft.item.Items.OAK_WOOD;
-import static net.minecraft.item.Items.register;
 
 public class ModBlocks
 {
@@ -54,7 +51,7 @@ public class ModBlocks
     public static  final Block CHARRED_LEAVES = registerBlock("charred_leaves",
             new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).nonOpaque()));
     public static  final Block CHARRED_SAPLING = registerBlock("charred_sapling",
-            new ModEndSapling(new CharredSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
+            new ModNetherSapling(new CharredSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING), ModConfiguredFeatures.CHARRED_KEY));
 
 
 
@@ -68,8 +65,8 @@ public class ModBlocks
                     FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()));
     public static final Block POTTED_TOBACCO_FLOWER = Registry.register(Registries.BLOCK, new Identifier(FluffsStuff.MOD_ID, "potted_tobacco_flower"),
             new FlowerPotBlock(TOBACCO_FLOWER, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block CANNABIS_CROP = Registry.register(Registries.BLOCK, new Identifier(FluffsStuff.MOD_ID, "cannabis_crop"),
-            new CannabisCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).requiresTool().strength(4f,10f)));
+    public static final Block HEMP_CROP = Registry.register(Registries.BLOCK, new Identifier(FluffsStuff.MOD_ID, "hemp_crop"),
+            new HempCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).requiresTool().strength(4f,10f)));
 
     public static final Block TOMATO_CROP = Registry.register(Registries.BLOCK, new Identifier(FluffsStuff.MOD_ID, "tomato_crop"),
             new TomatoCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));

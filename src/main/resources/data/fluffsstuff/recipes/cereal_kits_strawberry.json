@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "group": "cereal_kits_strawberry",
+  "ingredients": [
+    {
+      "item": "fluffsstuff:cereal_kits"
+    },
+    {
+      "item": "fluffsstuff:strawberry_milk_bucket"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "fluffsstuff:cereal_kits_strawberry",
+    "count": 3
+  }
+}

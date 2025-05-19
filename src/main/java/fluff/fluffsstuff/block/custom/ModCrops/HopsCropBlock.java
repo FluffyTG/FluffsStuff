@@ -4,8 +4,10 @@ import fluff.fluffsstuff.block.ModBlocks;
 import fluff.fluffsstuff.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -57,14 +59,6 @@ public class HopsCropBlock extends CropBlock
             if (currentAge <= this.getMaxAge()) {
                 float f = getAvailableMoisture(this, world, pos);
                 if (random.nextInt((int)(25.0F / f) + 1) == 0) {
-                    if(currentAge == MAX_AGE) {
-                        if (world.getBlockState(pos.up(1)).isOf(ModBlocks.TRELLIS)) {
-                            world.setBlockState(pos.up(1), this.withAge(0), 2);
-                        }
-                        if (world.getBlockState(pos.up(1)).isOf(ModBlocks.HOPS_CROP)){
-                            world.setBlockState(pos.up(1), this.withAge(currentAge+1), 2);
-                        }
-                    }
                     if(currentAge >= PROGRESSION_AGE) {
                         if (world.getBlockState(pos.up(1)).isOf(ModBlocks.TRELLIS)) {
                             world.setBlockState(pos.up(1), this.withAge(0), 2);
@@ -89,14 +83,13 @@ public class HopsCropBlock extends CropBlock
             nextAge = maxAge;
         }
 
-        if(currentAge >= PROGRESSION_AGE) {
+         if(currentAge >= PROGRESSION_AGE) {
             if (world.getBlockState(pos.up(1)).isOf(ModBlocks.TRELLIS)) {
                 world.setBlockState(pos.up(1), this.withAge(nextAge), 2);
-            } if (world.getBlockState(pos.up(1)).isOf(ModBlocks.HOPS_CROP)) {
-                world.setBlockState(pos, this.withAge(nextAge), 2);
-            } else {
+            }  else if (world.getBlockState(pos.up(1)).isOf(ModBlocks.HOPS_CROP)) {
                 world.setBlockState(pos, this.withAge(nextAge), 2);
             }
+                world.setBlockState(pos, this.withAge(nextAge), 2);
         } else {
             world.setBlockState(pos, this.withAge(nextAge), 2);
         }
@@ -130,18 +123,25 @@ public class HopsCropBlock extends CropBlock
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (this.getAge(state) == 8) {
+        if ((this.getAge(state) == 8) && !(player.isHolding(Items.BONE_MEAL))) {
             java.util.Random harvestRNG = new java.util.Random();
             java.util.Random seedRNG = new java.util.Random();
             int harvestCount = 1+harvestRNG.nextInt(2);
             int seedCount = seedRNG.nextInt(2);
 
-            player.giveItemStack(new ItemStack(ModItems.HOPS, harvestCount));
-            player.giveItemStack(new ItemStack(ModItems.HOPS_SEEDS, seedCount));
+            for (int i = 1; i <= harvestCount; i++) {
+                Block.dropStack(world, pos, ModItems.HOPS.getDefaultStack());
+            }
+            for (int i = 0; i <= seedCount; i++) {
+                Block.dropStack(world, pos, ModItems.HOPS_SEEDS.getDefaultStack());
+            }
+
             player.playSound(SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 0.5f, 3f);
             world.setBlockState(pos, state.with(AGE, 3), Block.NOTIFY_ALL);
-        }
 
-        return ActionResult.success(world.isClient);
+            return ActionResult.success(world.isClient);
+        } else {
+            return ActionResult.FAIL;
+        }
     }
 }

@@ -1,10 +1,10 @@
 {
   "replace": false,
   "values": [
-    "fluffsstuff:charred_planks",
-    "fluffsstuff:charred_log",
-    "fluffsstuff:charred_log_stripped",
-    "fluffsstuff:charred_wood",
-    "fluffsstuff:charred_wood_stripped"
+    "fluffytgplants:charred_planks",
+    "fluffytgplants:charred_log",
+    "fluffytgplants:charred_log_stripped",
+    "fluffytgplants:charred_wood",
+    "fluffytgplants:charred_wood_stripped"
   ]
 }

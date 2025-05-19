@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "fluffsstuff:token_block"
+    "fluffsstuff:token_block",
+    "fluffsstuff:hemp_crop"
   ]
 }

@@ -1,0 +1,83 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cereal_kits": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "fluffsstuff:cereal_kits"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe1": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fluffsstuff:cereal_kits_bowl"
+      }
+    },
+    "has_the_recipe2": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fluffsstuff:cereal_kits_milk"
+      }
+    },
+    "has_the_recipe3": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fluffsstuff:cereal_kits_milk_bowlway"
+      }
+    },
+    "has_the_recipe4": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fluffsstuff:cereal_kits_milk_milkway"
+      }
+    },
+    "has_the_recipe5": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fluffsstuff:cereal_kits_strawberry"
+      }
+    },
+    "has_the_recipe6": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fluffsstuff:cereal_kits_strawberry_bowlway"
+      }
+    },
+    "has_the_recipe7": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fluffsstuff:cereal_kits_strawberry_milkway"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cereal_kits",
+      "has_the_recipe1",
+      "has_the_recipe2",
+      "has_the_recipe3",
+      "has_the_recipe4",
+      "has_the_recipe5",
+      "has_the_recipe6",
+      "has_the_recipe7"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "fluffsstuff:cereal_kits_bowl",
+      "fluffsstuff:cereal_kits_milk",
+      "fluffsstuff:cereal_kits_milk_bowlway",
+      "fluffsstuff:cereal_kits_milk_milkway",
+      "fluffsstuff:cereal_kits_strawberry",
+      "fluffsstuff:cereal_kits_strawberry_bowlway",
+      "fluffsstuff:cereal_kits_strawberry_milkway"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -74,12 +74,19 @@ public class StrawberryCropBlock extends CropBlock
             int harvestCount = 1+harvestRNG.nextInt(2);
             int seedCount = seedRNG.nextInt(2);
 
-            player.giveItemStack(new ItemStack(ModItems.STRAWBERRY, harvestCount));
-            player.giveItemStack(new ItemStack(ModItems.STRAWBERRY_SEEDS, seedCount));
+            for (int i = 1; i <= harvestCount; i++) {
+                Block.dropStack(world, pos, ModItems.STRAWBERRY.getDefaultStack());
+            }
+            for (int i = 0; i <= seedCount; i++) {
+                Block.dropStack(world, pos, ModItems.STRAWBERRY_SEEDS.getDefaultStack());
+            }
+
             player.playSound(SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 0.5f, 3f);
             world.setBlockState(pos, state.with(AGE, 3), Block.NOTIFY_ALL);
+
+            return ActionResult.success(world.isClient);
         }
 
-        return ActionResult.success(world.isClient);
+        return ActionResult.FAIL;
     }
 }

@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "group": "cereal",
+  "ingredients": [
+    {
+      "item": "fluffsstuff:strawberry"
+    },
+    {
+      "item": "fluffsstuff:strawberry"
+    },
+    {
+      "item": "fluffsstuff:strawberry"
+    },
+    {
+      "item": "fluffsstuff:strawberry"
+    },
+    {
+      "item": "fluffsstuff:strawberry"
+    },
+    {
+      "item": "fluffsstuff:strawberry"
+    },
+    {
+      "item": "fluffsstuff:strawberry"
+    },
+    {
+      "item": "fluffsstuff:strawberry"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    }
+  ],
+  "result": {
+    "item": "fluffsstuff:strawberry_milk_bucket",
+    "count": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "fluffytgplants:sapphire_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "fluffytgplants:sapphire"
+  }
+}

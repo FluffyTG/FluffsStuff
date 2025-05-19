@@ -38,7 +38,7 @@ public static final ItemGroup TOKEN_GROUP = Registry.register(Registries.ITEM_GR
                     entries.add(ModItems.CRUSHED_TOBACCO);
                     entries.add(ModItems.TOBACCO_STICK);
 
-                    entries.add(ModItems.CANNABIS_SEEDS);
+                    entries.add(ModItems.HEMP_SEEDS);
                     entries.add(ModItems.CANNABIS);
                     entries.add(ModItems.COOKIE);
 
@@ -51,8 +51,6 @@ public static final ItemGroup TOKEN_GROUP = Registry.register(Registries.ITEM_GR
                     entries.add(ModItems.CORN_SEEDS);
                     entries.add(ModItems.CORN);
 
-                    entries.add(ModItems.SAPPHIRE_HEAD_PICK);
-                    entries.add(ModItems.SAPPHIRE_TEMP_PICK);
 
 
                     entries.add(ModBlocks.CHARRED_SAPLING);
@@ -62,6 +60,38 @@ public static final ItemGroup TOKEN_GROUP = Registry.register(Registries.ITEM_GR
                     entries.add(ModBlocks.CHARRED_WOOD_STRIPPED);
                     entries.add(ModBlocks.CHARRED_PLANKS);
                     entries.add(ModBlocks.CHARRED_LEAVES);
+
+                    entries.add(ModItems.SKEWER);
+
+                    entries.add(ModItems.FORK);
+                    entries.add(ModItems.SPOON);
+
+                    entries.add(ModItems.BOWL_O_MILK);
+                    entries.add(ModItems.BOWL_O_STRAWBERRY);
+
+                    entries.add(ModItems.CEREAL_KITS);
+                    entries.add(ModItems.CEREAL_KITS_BOWL);
+                    entries.add(ModItems.CEREAL_KITS_MILK);
+                    entries.add(ModItems.CEREAL_KITS_STRAWBERRY);
+
+                    entries.add(ModItems.GRITS);
+                    entries.add(ModItems.CORNBREAD);
+                    entries.add(ModItems.CORN_CHILI_LIME);
+                    entries.add(ModItems.CREAMED_CORN);
+                    entries.add(ModItems.FUFU);
+
+                    entries.add(ModItems.STRAWBERRY_JAM);
+                    entries.add(ModItems.STRAWBERRY_ICE_CREAM);
+                    entries.add(ModItems.STRAWBERRY_PARFAIT);
+                    entries.add(ModItems.STRAWBERRY_MILK_BUCKET);
+                    entries.add(ModItems.CHOCOLATE_STRAWBERRIES);
+
+                    entries.add(ModItems.TOMATO_SALAD);
+                    entries.add(ModItems.TOMATO_PUREE);
+                    entries.add(ModItems.FRIED_TOMATO);
+                    entries.add(ModItems.TOMATO_SOUP);
+                    entries.add(ModItems.TOMATO_SKEWER);
+
                 }).build());
     public static void registerItemGroups()
     {

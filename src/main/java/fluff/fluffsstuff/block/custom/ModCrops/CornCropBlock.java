@@ -4,6 +4,7 @@ import fluff.fluffsstuff.block.ModBlocks;
 import fluff.fluffsstuff.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -150,7 +151,7 @@ public class CornCropBlock extends CropBlock
 
     @Override
     protected ItemConvertible getSeedsItem() {
-        return ModItems.TOBACCO_SEEDS;
+        return ModItems.CORN_SEEDS;
     }
 
     @Override
@@ -169,24 +170,36 @@ public class CornCropBlock extends CropBlock
             java.util.Random cornFlowerRNG = new java.util.Random();
             int cornFlowerCount = 1+cornFlowerRNG.nextInt(2);
 
-            player.giveItemStack(new ItemStack(Items.CORNFLOWER, cornFlowerCount));
+            for (int i = 1; i <= cornFlowerCount; i++) {
+                Block.dropStack(world, pos, Items.CORNFLOWER.getDefaultStack());
+            }
+
+            //player.giveItemStack(new ItemStack(Items.CORNFLOWER, cornFlowerCount));
             player.playSound(SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 0.5f, 3f);
             world.setBlockState(pos, state.with(AGE, 5), Block.NOTIFY_ALL);
-        }
-        if (this.getAge(state) == 5 || this.getAge(state) == 9) {
+
+            return ActionResult.success(world.isClient);
+
+        } if (this.getAge(state) == 5 || this.getAge(state) == 9) {
             java.util.Random cornRNG = new java.util.Random();
             java.util.Random cornSeedRNG = new java.util.Random();
             int cornCount = 1+cornRNG.nextInt(2);
             int cornSeedCount = cornSeedRNG.nextInt(2);
             int decrementAge = this.getAge(state) - 1;
 
-            player.giveItemStack(new ItemStack(ModItems.CORN, cornCount));
-            player.giveItemStack(new ItemStack(ModItems.CORN_SEEDS, cornSeedCount));
+            for (int i = 1; i <= cornCount; i++) {
+                Block.dropStack(world, pos, ModItems.CORN.getDefaultStack());
+            }
+            for (int i = 0; i <= cornSeedCount; i++) {
+                Block.dropStack(world, pos, ModItems.CORN_SEEDS.getDefaultStack());
+            }
+
             player.playSound(SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 0.5f, 3f);
             world.setBlockState(pos, state.with(AGE, decrementAge), Block.NOTIFY_ALL);
+
+            return ActionResult.success(world.isClient);
+        } else {
+            return ActionResult.FAIL;
         }
-
-        return ActionResult.success(world.isClient);
     }
-
 }

@@ -49,8 +49,6 @@ public class ModModelProvider extends FabricModelProvider
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.SAPPHIRE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SAPPHIRE_TEMP_PICK, Models.HANDHELD);
-
         itemModelGenerator.register(ModItems.SMILE_TOKEN, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.TOBACCO_LEAF, Models.GENERATED);
@@ -69,6 +67,36 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.HOPS, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CORN, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.SKEWER, Models.GENERATED);
+        //food
+        itemModelGenerator.register(ModItems.CORNBREAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CORN_CHILI_LIME, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CREAMED_CORN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FUFU, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CEREAL_KITS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CEREAL_KITS_MILK, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CEREAL_KITS_STRAWBERRY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CEREAL_KITS_BOWL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GRITS, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.BOWL_O_MILK, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BOWL_O_STRAWBERRY, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.SPOON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FORK, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.CHOCOLATE_STRAWBERRIES, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STRAWBERRY_JAM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STRAWBERRY_ICE_CREAM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STRAWBERRY_PARFAIT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STRAWBERRY_MILK_BUCKET, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.FRIED_TOMATO, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TOMATO_PUREE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TOMATO_SALAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TOMATO_SOUP, Models.GENERATED);
+
 
 
 

@@ -70,17 +70,50 @@ public class TomatoCropBlock extends CropBlock
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (this.getAge(state) == 5) {
-            Random tomatoRNG = new Random();
-            Random tomatoSeedRNG = new Random();
-            int tomatoCount = 1+tomatoRNG.nextInt(2);
-            int tomatoSeedCount = tomatoSeedRNG.nextInt(2);
+            if (player.isHolding(ModItems.SKEWER) || (player.isHolding(ModItems.TOMATO_SKEWER) && player.getStackInHand(hand).getDamage() != 0)) {
+              if (player.isHolding(ModItems.SKEWER)) {
+                  Random tomatoRNG = new Random();
+                  int tomatoCount = 1 + tomatoRNG.nextInt(2);
 
-            player.giveItemStack(new ItemStack(ModItems.TOMATO, tomatoCount));
-            player.giveItemStack(new ItemStack(ModItems.TOMATO_SEEDS, tomatoSeedCount));
-            player.playSound(SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 0.5f, 3f);
-            world.setBlockState(pos, state.with(AGE, 4), Block.NOTIFY_ALL);
+                  player.getStackInHand(player.getActiveHand()).decrement(1);
+                  player.giveItemStack(new ItemStack(ModItems.TOMATO_SKEWER));
+                  player.getStackInHand(player.getActiveHand()).setDamage(5-tomatoCount);
+
+                  player.playSound(SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 0.5f, 3f);
+                  world.setBlockState(pos, state.with(AGE, 4), Block.NOTIFY_ALL);
+
+                  return ActionResult.success(world.isClient);
+              } else if (player.isHolding(ModItems.TOMATO_SKEWER)) {
+                  Random tomatoRNG = new Random();
+                  int tomatoCount = 1 + tomatoRNG.nextInt(2);
+
+                  int getDamage = player.getStackInHand(player.getActiveHand()).getDamage();
+                  if (!(getDamage == 0)) player.getStackInHand(player.getActiveHand()).setDamage(getDamage-tomatoCount);
+
+                  player.playSound(SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 0.5f, 3f);
+                  world.setBlockState(pos, state.with(AGE, 4), Block.NOTIFY_ALL);
+
+                  return ActionResult.success(world.isClient);
+              }
+            } else {
+                Random tomatoRNG = new Random();
+                Random tomatoSeedRNG = new Random();
+                int tomatoCount = 1 + tomatoRNG.nextInt(2);
+                int tomatoSeedCount = tomatoSeedRNG.nextInt(2);
+
+                for (int i = 1; i <= tomatoCount; i++) {
+                    Block.dropStack(world, pos, ModItems.TOMATO.getDefaultStack());
+                }
+                for (int i = 0; i <= tomatoSeedCount; i++) {
+                    Block.dropStack(world, pos, ModItems.TOMATO_SEEDS.getDefaultStack());
+                }
+
+                player.playSound(SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 0.5f, 3f);
+                world.setBlockState(pos, state.with(AGE, 4), Block.NOTIFY_ALL);
+
+                return ActionResult.success(world.isClient);
+            }
         }
-
-        return ActionResult.success(world.isClient);
+        return ActionResult.FAIL;
     }
 }

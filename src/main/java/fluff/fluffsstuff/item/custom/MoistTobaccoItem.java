@@ -32,13 +32,16 @@ public class MoistTobaccoItem extends Item
                     player.playSound(SoundEvents.BLOCK_ANCIENT_DEBRIS_BREAK, SoundCategory.NEUTRAL, 1.0f, 1.0f);
                     player.giveItemStack(ModItems.CRUSHED_TOBACCO.getDefaultStack());
                     player.addExperience(1);
+
+                    return ActionResult.SUCCESS;
+
                 }
 
             }
         }
 
 
-        return ActionResult.SUCCESS;
+        return ActionResult.FAIL;
     }
 
     private boolean isHardBlock(BlockState state) {

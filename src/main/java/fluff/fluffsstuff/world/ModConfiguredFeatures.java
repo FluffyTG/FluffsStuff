@@ -65,12 +65,12 @@ public class ModConfiguredFeatures
 
         register(context, CHARRED_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.CHARRED_LOG),
-                new StraightTrunkPlacer(5,4,3),
+                new StraightTrunkPlacer(2,2,2),
 
                 BlockStateProvider.of(ModBlocks.CHARRED_LEAVES),
                 new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(1), 2),
 
-                new TwoLayersFeatureSize(1,0,2)).build());
+                new TwoLayersFeatureSize(1,0,2)).dirtProvider(BlockStateProvider.of(Blocks.NETHERRACK)).build());
 
         register(context, RARE_CROPS_KEY, Feature.RANDOM_PATCH, new RandomPatchFeatureConfig
                 (1, 0, 0, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TOBACCO_FLOWER)),

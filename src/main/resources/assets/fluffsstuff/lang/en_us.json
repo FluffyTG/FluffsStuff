@@ -15,9 +15,33 @@
   "item.fluffsstuff.tobacco_leaf_cured": "Cured Tobacco Leaf",
   "item.fluffsstuff.moist_tobacco_leaf_cured": "Moist Cured Tobacco Leaf",
   "item.fluffsstuff.crushed_tobacco": "Crushed Tobacco",
+  "item.fluffsstuff.tobacco_stick": "Tobacco Stick",
+
+  "item.fluffsstuff.cookie": "Cookie",
+  "item.fluffsstuff.skewer": "Skewer",
+
+  "item.fluffsstuff.cornbread": "Cornbread",
+  "item.fluffsstuff.grits": "Grits",
+  "item.fluffsstuff.fufu": "Fufu",
+  "item.fluffsstuff.corn_chili_lime": "Chili Lime Corn",
+  "item.fluffsstuff.creamed_corn": "Creamed Corn",
+  "item.fluffsstuff.cereal_kits": "Kits Cereal",
+
+  "item.fluffsstuff.tomato_skewer": "Tomato Skewer",
+  "item.fluffsstuff.tomato_salad": "Tomato Salad",
+  "item.fluffsstuff.tomato_soup": "Tomato Soup",
+  "item.fluffsstuff.tomato_puree": "Tomato Puree",
+  "item.fluffsstuff.fried_tomato": "Fried Tomato",
+
+  "item.fluffsstuff.strawberry_jam": "Strawberry Jam",
+  "item.fluffsstuff.strawberry_milk_bucket": "Strawberry Milk Bucket",
+  "item.fluffsstuff.strawberry_ice_cream": "Tobacco Strawberry Ice Cream",
+  "item.fluffsstuff.strawberry_parfait": "Strawberry Parfait",
+  "item.fluffsstuff.chocolate_strawberries": "Chocolate Covered Strawberries",
+
 
   "item.fluffsstuff.cannabis": "Cannabis",
-  "item.fluffsstuff.cannabis_seeds": "Cannabis Seeds",
+  "item.fluffsstuff.hemp_seeds": "Hemp Seeds",
 
   "item.fluffsstuff.tomato": "Tomato",
   "item.fluffsstuff.tomato_seeds": "Tomato Seeds",
@@ -35,12 +59,19 @@
 
   "item.fluffsstuff.sapphire_temppick": "Sapphire Temp Pick",
 
-
+  "block.fluffsstuff.charred_sapling": "Charred Sapling",
   "block.fluffsstuff.charred_leaves": "Charred Leaves",
   "block.fluffsstuff.charred_log": "Charred Log",
-  "block.fluffsstuff.charred_sapling": "Charred Sapling",
+  "block.fluffsstuff.charred_wood": "Charred Wood",
+  "block.fluffsstuff.charred_planks": "Charred Planks",
   "block.fluffsstuff.charred_log_stripped": "Stripped Charred Log",
+  "block.fluffsstuff.charred_wood_stripped": "Stripped Charred Wood",
 
 
-  "itemgroup.fluffsstuff": "Fluff's Stuff!"
+  "itemgroup.fluffsstuff": "Fluff's Stuff!",
+
+  "effect.fluffsstuff.smoked": "Smoked",
+  "effect.fluffsstuff.frail": "Frail",
+  "effect.fluffsstuff.coughing_fit": "Coughing Fit",
+  "sounds.fluffsstuff.cough": "Player Coughs"
 }

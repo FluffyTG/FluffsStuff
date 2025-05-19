@@ -1,7 +1,7 @@
 package fluff.fluffsstuff.datagen;
 
 import fluff.fluffsstuff.block.ModBlocks;
-import fluff.fluffsstuff.block.custom.ModCrops.CannabisCropBlock;
+import fluff.fluffsstuff.block.custom.ModCrops.HempCropBlock;
 import fluff.fluffsstuff.block.custom.ModCrops.HopsCropBlock;
 import fluff.fluffsstuff.block.custom.ModCrops.StrawberryCropBlock;
 import fluff.fluffsstuff.block.custom.ModCrops.TomatoCropBlock;
@@ -42,9 +42,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addPottedPlantDrops(ModBlocks.POTTED_TOBACCO_FLOWER);
 
         BlockStatePropertyLootCondition.Builder builder1 = BlockStatePropertyLootCondition.builder
-                (ModBlocks.CANNABIS_CROP).properties((StatePredicate.Builder.create()
-                .exactMatch(CannabisCropBlock.AGE, 5)));
-        addDrop(ModBlocks.CANNABIS_CROP,cropDrops(ModBlocks.CANNABIS_CROP,ModItems.CANNABIS, ModItems.CANNABIS_SEEDS, builder1));
+                (ModBlocks.HEMP_CROP).properties((StatePredicate.Builder.create()
+                .exactMatch(HempCropBlock.AGE, 5)));
+        addDrop(ModBlocks.HEMP_CROP,cropDrops(ModBlocks.HEMP_CROP,ModItems.CANNABIS, ModItems.HEMP_SEEDS, builder1));
 
         BlockStatePropertyLootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder
                 (ModBlocks.TOMATO_CROP).properties((StatePredicate.Builder.create()

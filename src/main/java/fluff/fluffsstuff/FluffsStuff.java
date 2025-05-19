@@ -1,8 +1,10 @@
 package fluff.fluffsstuff;
 
 import fluff.fluffsstuff.block.ModBlocks;
+import fluff.fluffsstuff.effect.ModEffects;
 import fluff.fluffsstuff.item.ModItemGroups;
 import fluff.fluffsstuff.item.ModItems;
+import fluff.fluffsstuff.sound.ModSounds;
 import fluff.fluffsstuff.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -21,6 +23,8 @@ public class FluffsStuff implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModWorldGeneration.generateModWorldGen();
+		ModEffects.registerModEffects();
+		ModSounds.registerSounds();
 
 		StrippableBlockRegistry.register(ModBlocks.CHARRED_LOG, ModBlocks.CHARRED_LOG_STRIPPED);
 		StrippableBlockRegistry.register(ModBlocks.CHARRED_WOOD, ModBlocks.CHARRED_WOOD_STRIPPED);

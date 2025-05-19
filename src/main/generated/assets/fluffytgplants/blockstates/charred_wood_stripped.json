@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "fluffytgplants:block/charred_wood_stripped",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "fluffytgplants:block/charred_wood_stripped"
+    },
+    "axis=z": {
+      "model": "fluffytgplants:block/charred_wood_stripped",
+      "x": 90
+    }
+  }
+}
